@@ -43,18 +43,18 @@
 		<br>
 	    	 <hr>
 		<div align="middle"
-		<p><FONT face="Verdana" size="4" align="middle"> <b>This part is composed two sections, one section that focus more on calculating the distance that the food product has traveled whereas the other part focus more how much of the products are “produced” in the same country.<br>
+		<p><FONT face="Verdana" size="4" align="middle"> <b>This part is composed two sections, one section that focuses more on calculating the distance that the food products travel whereas the other part focuses more on how many of the products are “produced” domestically.<br>
 For each section, we focus on two different parameters: <br>
-- origins: represent the origin of the raw ingredients present in the final product. <br>
-- manufacturing places: represent where the raw ingredients are transformed into the final product.<br><br></b>
+- the origins: represents the origin of the raw ingredients present in the final product. <br>
+- the manufacturing places: represents where the raw ingredients are transformed into the final product.</b><br><br>
 
-Only the 20 countries with the most information relative to the products were analyzed for two major reasons: <br>
-- The computational time needed to process more countries would have been too important to analyze all the data.<br>
-- The remaining countries have not enough data to make a statistical assumption.<br><br>
+Only the 20 countries with the most information relative to the products were analysed for two major reasons: <br>
+- The computational time needed to process more countries would have been too important to analyse all the data. <br>
+- The remaining countries do not have enough data to make statistical assumptions. <br><br>
 
-For the first part, an external library, Geopy, was used in order to give the coordinates of the different address given and then the distance was calculated relative to the middle of the country. However, Geopy allow only a small amount of request. For this reason, only the 20 most frequent address per country were taken into account. After calculating the distance of each address, a weighted arithmetic mean of the distance was calculated with respect to the number of times this address appeared. This process was performed on the 20 countries both for the manufacturing places and the origins.<br><br>
+For the first part, an external library, Geopy, was used in order to give the coordinates of the different addresses given, and then the distance from that address to the center of the country was calculated. However, Geopy only allows for a small number of requests. For this reason, only the 20 most frequent addresses per country were taken into account. After calculating the distance of each address, a weighted arithmetic mean of the distance was calculated with respect to the number of times this address appeared. This process was performed on the 20 countries both for the manufacturing places and the origins. <br><br>
 
-For the second part, another external library, babel, was used in order to make a list of countries names in different languages. This was performed because the data were not clean and were written in different languages. Each time a country name was given in the manufacturing places or origins the data was saved. We calculate the proportion of occurrence of the name of the country for each given country. For instance, if the country is Switzerland we look at the proportion of time the name Switzerland (independent to the language or isocode given) appear in the address with respect to the total address where at least one piece of information was given. This gives a representation on how the country produces its own food. A pie chart for each country was displayed in the map as well, relating the top 5 countries in proportion of address. This process was performed on the 20 countries both for the manufacturing places and the origins. .<br><br>
+For the second part, another external library, babel, was used in order to make a list of country names in different languages. This was performed because the data were not clean and were written in different languages. Each time a country’s name was given in the ‘manufacturing places’ or ‘origins’, the data was saved. Then, we calculated the proportion of occurrences of the name of the country for each given country. For instance, if the country is Switzerland we look at the proportion of time the name Switzerland (independent of the language or ISO code given) appears in the address with respect to the total address where at least one piece of information was given. This gives a representation of how the country produces its own food. A pie chart for each country was displayed on the map as well, relating the top 5 countries in proportions of addresses. This process was performed on the 20 countries both for the manufacturing places and the origins. <br><br>
 
 </FONT> </p> 
 	   </div>
@@ -68,7 +68,7 @@ For the second part, another external library, babel, was used in order to make 
 		<p><FONT face="Verdana" size="5"><u><b>About Manufacturing places…</b></u></FONT>
 		
 		<p><FONT face="Verdana" size="4" align="middle"> <br>
-<b>This first map displays for each country the proportion of products manufactured locally. Pie Charts present the top-5 countries in which the products are manufactured.</b><br><br>
+<b>This first map displays the proportion of products manufactured locally for each country. Pie Charts present the top-5 countries in which the products are manufactured.</b><br><br>
 
 </FONT> </p>
 
@@ -92,19 +92,22 @@ For the second part, another external library, babel, was used in order to make 
 		<p><FONT face="Verdana" size="4">
 		<br>
 		On this first map we observe that the countries that have the biggest part of their products manufactured locally are:<br>
-- Mexico (70.38%), that was a real surprise for us.<br>
-- Russia (70.22%), Australia (53.29%) and Canada (45.44%), that is more logical, because those are very big countries. Furthermore, Australia is quite isolated from the other countries.<br>
+- Mexico (70.38%): That was a surprise for us. One possible explanation is that, compared to the other countries on the map, a big part of its economy is made up by the agricultural (primary, origins) sector and the industrial (secondary, manufacturing places) sector. Thus, it would not be very difficult for them to produce their own food. <br>
+- Russia (70.22%): One explanation could be less import/export of products due to the more closed politics. <br>
+ -Australia (53.29%) and Canada (45.44%): That is more logical, because those are very big countries. Hence, more capacity to produce a variety of food products. Furthermore, Australia is quite isolated from other countries. <br>
 -And three European countries: Spain (58.47%), Germany (57.75%) and France (47.94%).
-We observe that Spain, that was already noticed in the first part for its high proportion of healthy (grade A) products, is now noticed for its high proportion of locally manufactured goods.<br>
-The countries that have the lowest part of their products manufactured locally are:<br>
--The United States (20.91%), despite its very big superficy.<br>
--Netherlands (13.10%)<br>
--And Switzerland (16.89%): this was the most surprising information that came out of this graph. Indeed, we always had the feeling that Switzerland was trying to offer the most local products as possible. Either this stereotype is not so true, either those ‘typical Swiss products made in Switzerland’ are not present yet on the OpenFactFood platform. <br>
-However, we observe that the countries displayed by the pie chart for Switzerland are mostly very close countries (ex: Germany and France). We observe the same thing for Netherlands, but not for the United States.<br><br>
+We observe that Spain, that was already noted in the first part for its high proportion of healthy (grade A) products, is now noted for its high proportion of locally manufactured goods. <br><br>
+
+The countries that have the lowest part of their products manufactured locally are:
+-The United States (20.91%), despite its very big area. Globally, the United States have capitalist politics. Indeed, it seems that they tend to produce their products where the costs are lower, even though the distances are big. <br>
+-The Netherlands (13.10%)<br>
+-And Switzerland (16.89%): This was the most surprising information that came out of this graph. Indeed, we always had the feeling that Switzerland was trying to offer the most local products possible. Either this stereotype is not so true, or those ‘typical Swiss products made in Switzerland’ are not present yet on the OpenFactFood platform. <br> 
+However, we observe that the countries displayed by the pie chart for Switzerland are mostly very close countries (ex: Germany and France). We observe the same thing for the Netherlands, but not for the United States. <br>
+Indeed, Switzerland and the Netherlands are countries where the cost of producing a food product are very high. Besides, they are also small countries and may not be able to produce a sufficient variety of food on their own. Thus, it seems that they rely on their neighbours, so the food remains pretty local. <br>
 
 <br><br>
 
-<b>The following graph displays the average distance a product need to travel after manufacturing, before being sold, in different countries.</b>
+<b>The following graph displays the average distance a product needs to travel after manufacturing, before being sold.</b>
 
 		
 		</div>
@@ -112,7 +115,7 @@ However, we observe that the countries displayed by the pie chart for Switzerlan
 		
 		<br>
 		<div align="middle">
-		<p><FONT face="Verdana" size="4"><b><u>Average distance (in km) a product needs to travel after manufacturing, before being sold in different country</u> </b></FONT>
+		<p><FONT face="Verdana" size="4"><b><u>Average distance (in km) a product needs to travel after manufacturing, before being sold in a different country </u> </b></FONT>
 		<div>
 		<div align="middle">
 		<object data="html_part3/manufacturing_places_km.html" width="800" height="400"> 
@@ -127,10 +130,9 @@ However, we observe that the countries displayed by the pie chart for Switzerlan
 	    <div class="row">
 	    <div class="col-sm-12">
 	    	
-		<div align="middle"
-		<p><FONT face="Verdana" size="4" align="left"> The results obtained from this second map are a little bit different:<br>
--‘Small’ distances (between 400 and 1400km) are obtained for the European countries (excepted for Ireland), as well as for Mexico.<br>
--Very big distances are obtained for North America and Australia (between 5500 and 6500km). Indeed, those countries are already very big (big distances to travel), plus far away from Europe, and it seems that numerous products sold in these three countries are manufactured in Europe.<br>
+		<div align="middle"The results obtained from this second map are a little bit different:<br>
+-‘Small’ distances (between 400 and 1400km) are obtained for the European countries (excepted for Ireland, this is a little surprising), as well as for Mexico. <br>
+-Very big distances are obtained for North American countries and Australia (between 5500 and 6500km). Indeed, those countries are already very big (big distances to travel), plus far away from Europe, and it seems that numerous products sold in these three countries are manufactured in Europe or Asia. <br>
 -The smallest distances are observed for Germany (~377km), France (~422km) and Switzerland (~464km).<br><br>
 </FONT> </p> 
 	    <hr>
@@ -143,7 +145,7 @@ However, we observe that the countries displayed by the pie chart for Switzerlan
 		<p><FONT face="Verdana" size="5"><u><b>About the Origins of products…</b></u></FONT>
 		
 		<p><FONT face="Verdana" size="4" align="middle"> <br>
-<b>This third map displays the proportion of local ingredients for each country. Pie Charts present the top-5 countries for product origins.
+<b>This third map displays the proportion of local ingredients for each country. Pie Charts present the top-5 countries for product origins.</b>
 </FONT> </p>
 
 		</div>
@@ -166,21 +168,23 @@ However, we observe that the countries displayed by the pie chart for Switzerlan
 		<br>
 		<div align="middle">
 		<p><FONT face="Verdana" size="4">
-		This results displayed by this map are very similar to the first one:<br><br>
+		The results displayed on this map are very similar to the first ones:<br><br>
 
-We observe that the countries that have the biggest part of local ingredients are:<br>
+We observe that the countries that have the biggest part of local ingredients are: <br>
 - Mexico (74.2%)<br>
 - Russia (49.38%), Australia (49.80%) and Canada (48.73%).<br>
 -And four European countries: Romania (53.55%), Portugal (50.30 %), Spain (44.82%) and France (45.16%).<br>
-We observe that Romania, that was noticed in the first part for its high proportion of unhealthy (grade E) products, is now noticed for its high proportion of local ingredients.
-Germany, that had very good values in terms of manufacturing places, in the first part, is not that good in this second part.<br>
-The countries that have the lowest part of local ingredients are:<br>
+We observe that Romania, that stood out in the first part for its high proportion of unhealthy (grade E) products, is now noticed for its high proportion of local ingredients. <br>
+Germany, that had very good values in terms of manufacturing places, in the first part, is not that good in this second part. Indeed, Germany has quite an important industrial sector. <br><br>
+
+The countries that have the lowest part of local ingredients are: <br>
 -The United States (23.81%)<br>
--Netherlands (11.01%)<br>
--And Switzerland (14.77%): those observations are exactly the same as for the first part.<br><br>
+-The Netherlands (11.01%)<br>
+-And Switzerland (14.77%): those observations are exactly the same as for the first part. <br>
+<br>
 
 <br>
-<b>The following graph displays the average distance between the ingredients’ origin place and the place where the product is sold, in different countries.</b>
+<b>The following graph displays the average distance between the ingredients’ place of origin and the place where the product is sold, in different countries.</b>
 
 		
 		</div>
@@ -188,7 +192,7 @@ The countries that have the lowest part of local ingredients are:<br>
 		
 		<br>
 		<div align="middle">
-		<p><FONT face="Verdana" size="4"><b><u>Average distance (in km) between the ingredients’ origin place and the place the final product will be sold, in different countries</u> </b></FONT>
+		<p><FONT face="Verdana" size="4"><b><u>Average distance (in km) between the ingredients’ place of origin and the country where the final product will be sold </u> </b></FONT>
 		<div>
 		<div align="middle">
 		<object data="html_part3/origins_km.html"  width="800" height="400"> 
@@ -206,17 +210,17 @@ The countries that have the lowest part of local ingredients are:<br>
 	    <div class="col-sm-12">
 	    	
 		<div align="middle"
-		<p><FONT face="Verdana" size="4" align="left"> Here again, the obtained results are very similar to those obtained in the first part (second map):<br>
--‘Small’ distances (between 500 and 1600km) are obtained for the European countries, excepted for Spain (~2190km), Netherlands (~2738km),  Hungary (~1959km) and Ireland (~3770km).<br>
--Very big distances are obtained for North America and Australia (between 4500 and 5500km).<br>
--The smallest distances are observed for Italy (~553km), Switzerland (~572km), and Romania (~658km).<br><br>
+		<p><FONT face="Verdana" size="4" align="left"> Here once again, the results obtained are very similar to those obtained in the first part (second map): <br>
+-‘Small’ distances (between 500 and 1600km) are obtained for the European countries, excepted for Spain (~2190km), the Netherlands (~2738km), Hungary (~1959km) and Ireland (~3770km). <br>
+-Very big distances are obtained for North America and Australia (between 4500 and 5500km). <br>
+-The smallest distances are observed for Italy (~553km), Switzerland (~572km), and Romania (~658km). <br><br>
 <hr>
 <br>
 <br>
-<b>It seems that for very big countries (in term of superficy), the proportion of products manufactured locally as well as the local ingredient proportion are quite high (more than 45%), excepted for the United States. But, due to these big country sizes and remoteness from the other countries, the distances the ingredients and goods need to travel before being sold are very high. <br>
-In Europe, two countries have very good results both in terms of local manufacturing proportions and distances travelled after manufacturing: Germany and France. Furthermore, it seems that a lot of different countries have a significant proportion of products manufactured in Germany, including far away countries.<br>
-In terms of origins, the most noticeable European country that displays good results both for the local proportions and in terms of travelling distance is Romania.<br>
-For Switzerland, we had very bad results in terms of locally manufactured products proportion, as well as local ingredients proportions, but very good results in term of distances travelled. Indeed, it seems that Switzerland cares about proximity, but may be too small to be able to produce all its products. This could also be due to economic reasons, at least partially.<br>
+<b>It seems that for very big countries (in terms of area), the proportion of products manufactured locally as well as the proportion of local ingredients are quite high (more than 45%), except for the United States. But, due to these countries’ big size and to their remoteness from other countries, the distances the ingredients and goods need to travel before being sold are very high. <br>
+In Europe, two countries have very good results both in terms of local manufacturing proportions and distances travelled after manufacturing: Germany and France. Furthermore, it seems that a lot of different countries have a significant proportion of products manufactured in Germany, including far away countries. <br>
+In terms of origins, the most noticeable European country that displays good results both for the local proportions and in terms of travelling distance is Romania. <br>
+For Switzerland, we had very bad results in terms of proportion of locally manufactured products and proportion of local ingredients, but very good results in term of distances travelled. Indeed, it seems that Switzerland cares about proximity, but it may be too small to be able to produce all its products. This could also be due to economic reasons, at least partially.
 </b>
 </FONT> </p> 
 	    
